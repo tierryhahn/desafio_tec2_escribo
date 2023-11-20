@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const prisma = new PrismaClient();
-const secretKey = 'passaro'; // Substitua por uma chave secreta mais segura
+const secretKey = process.env.SECRET_KEY || 'suaChaveSecreta';
 
 const signUp = async (req, res) => {
   try {

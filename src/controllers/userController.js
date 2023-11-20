@@ -3,7 +3,7 @@ const { PrismaClient } = require('@prisma/client');
 const jwt = require('jsonwebtoken');
 
 const prisma = new PrismaClient();
-const secretKey = 'passaro'; // Substitua por uma chave secreta mais segura
+const secretKey = process.env.SECRET_KEY || 'suaChaveSecreta';
 
 const getUser = async (req, res) => {
   try {
