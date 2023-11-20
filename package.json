@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "node src/index.js",
-    "build": "tsc",
+    "build": "prisma generate && node src/index.js",
     "lint": "eslint src/**/*.js --fix",
     "generate": "prisma generate"
   },
