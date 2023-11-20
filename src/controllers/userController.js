@@ -1,11 +1,11 @@
-import { Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
-import jwt from 'jsonwebtoken';
+const { Request, Response } = require('express');
+const { PrismaClient } = require('@prisma/client');
+const jwt = require('jsonwebtoken');
 
 const prisma = new PrismaClient();
-const secretKey = 'passaro';
+const secretKey = 'passaro'; // Substitua por uma chave secreta mais segura
 
-export const getUser = async (req: Request, res: Response) => {
+const getUser = async (req, res) => {
   try {
     const token = req.headers.authorization?.replace('Bearer ', '');
 
@@ -13,7 +13,7 @@ export const getUser = async (req: Request, res: Response) => {
       return res.status(401).json({ mensagem: 'Não autorizado' });
     }
 
-    jwt.verify(token, secretKey, async (err: any, decoded: any) => {
+    jwt.verify(token, secretKey, async (err, decoded) => {
       if (err) {
         if (err.name === 'TokenExpiredError') {
           return res.status(401).json({ mensagem: 'Sessão inválida' });
@@ -44,3 +44,5 @@ export const getUser = async (req: Request, res: Response) => {
     res.status(500).json({ mensagem: 'Erro interno' });
   }
 };
+
+module.exports = { getUser };

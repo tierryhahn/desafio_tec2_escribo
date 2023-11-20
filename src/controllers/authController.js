@@ -1,12 +1,12 @@
-import { Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
+const { Request, Response } = require('express');
+const { PrismaClient } = require('@prisma/client');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const prisma = new PrismaClient();
-const secretKey = 'passaro';
+const secretKey = 'passaro'; // Substitua por uma chave secreta mais segura
 
-export const signUp = async (req: Request, res: Response) => {
+const signUp = async (req, res) => {
   try {
     const { nome, email, senha, telefones } = req.body;
 
@@ -44,7 +44,7 @@ export const signUp = async (req: Request, res: Response) => {
   }
 };
 
-export const signIn = async (req: Request, res: Response) => {
+const signIn = async (req, res) => {
   try {
     const { email, senha } = req.body;
 
@@ -75,3 +75,5 @@ export const signIn = async (req: Request, res: Response) => {
     res.status(500).json({ mensagem: 'Erro interno' });
   }
 };
+
+module.exports = { signUp, signIn };
