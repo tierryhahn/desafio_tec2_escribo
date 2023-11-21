@@ -8,20 +8,19 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.3",
-    "prisma": "^5.6.0",
     "sequelize": "^6.35.1",
     "sequelize-typescript": "^2.1.5",
     "ts-node": "^10.9.1"
   },
   "scripts": {
     "start": "node src/index.js",
-    "build": "npm run generate && node src/index.js",
-    "generate": "prisma generate",
+    "build": "prisma generate && npm run start",
     "lint": "eslint src/**/*.js --fix"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.5",
     "eslint": "^8.54.0",
+    "prisma": "^5.6.0",
     "run": "^1.4.0"
   }
 }
