@@ -29,7 +29,7 @@ const signUp = async (req, res) => {
       },
     });
 
-    const token = jwt.sign({ userId: newUser.id }, secretKey, { expiresIn: '1h' });
+    const token = jwt.sign({ userId: newUser.id }, secretKey, { expiresIn: '30m' });
 
     res.status(201).json({
       id: newUser.id,
@@ -61,7 +61,7 @@ const signIn = async (req, res) => {
       data: { ultimoLogin: new Date() },
     });
 
-    const token = jwt.sign({ userId: updatedUser.id }, secretKey, { expiresIn: '1h' });
+    const token = jwt.sign({ userId: updatedUser.id }, secretKey, { expiresIn: '30m' });
 
     res.status(200).json({
       id: updatedUser.id,
