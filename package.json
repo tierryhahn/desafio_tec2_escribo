@@ -13,8 +13,7 @@
     "ts-node": "^10.9.1"
   },
   "scripts": {
-    "start": "node src/index.js",
-    "build": "prisma generate && npm run start",
+    "dev": "node src/index.js",
     "lint": "eslint src/**/*.js --fix",
     "vercel-build": "npx prisma migrate deploy"
   },
