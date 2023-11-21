@@ -29,7 +29,7 @@ const signUp = async (req, res) => {
       },
     });
 
-    const token = jwt.sign({ userId: newUser.id }, secretKey, { expiresIn: '30m' });
+    const token = jwt.sign({ userId: newUser.id }, secretKey, { expiresIn: '1h' });
 
     res.status(201).json({
       id: newUser.id,
