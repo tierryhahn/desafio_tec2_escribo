@@ -15,7 +15,8 @@
   "scripts": {
     "start": "node src/index.js",
     "build": "prisma generate && npm run start",
-    "lint": "eslint src/**/*.js --fix"
+    "lint": "eslint src/**/*.js --fix",
+    "vercel-build": "npx prisma migrate deploy"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.5",
