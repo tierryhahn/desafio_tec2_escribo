@@ -96,6 +96,18 @@ Uma API RESTful para autenticação de usuários, que permite operações de cad
 3. Configure as variáveis de ambiente no arquivo `.env`.
 4. Execute o projeto com `npm run dev`.
 
+## Teste Unitários
+
+Execute os testes unitários com o comando:
+
+```json
+  npm test
+```
+
+## Deploy
+
+A API está disponível em https://desafio-tec2-escribo.vercel.app/.
+
 ## Contribuições
 
 Contribuições são bem-vindas! Se encontrar problemas ou tiver sugestões, sinta-se à vontade para abrir uma issue ou enviar um pull request.
