@@ -96,7 +96,7 @@ Uma API RESTful para autenticação de usuários, que permite operações de cad
 3. Configure as variáveis de ambiente no arquivo `.env`.
 4. Execute o projeto com `npm run dev`.
 
-## Teste Unitários
+## Testes Unitários
 
 Execute os testes unitários com o comando:
 
