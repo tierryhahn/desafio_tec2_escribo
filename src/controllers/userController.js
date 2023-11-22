@@ -34,9 +34,15 @@ const getUser = async (req, res) => {
 
       res.status(200).json({
         id: user.id,
+        nome: user.nome,
+        email: user.email,
         data_criacao: user.dataCriacao,
         data_atualizacao: user.dataCriacao,
         ultimo_login: user.ultimoLogin,
+        telefones: user.telefones.map((telefone) => ({
+          numero: telefone.numero,
+          ddd: telefone.ddd,
+        })),
       });
     });
   } catch (error) {
